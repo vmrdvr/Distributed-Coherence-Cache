@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+<cache-config>
+
+	<caching-scheme-mapping>
+
+		<cache-mapping>
+			<cache-name>employee-map</cache-name>
+			<scheme-name>MapDistCache</scheme-name>
+		</cache-mapping>
+	</caching-scheme-mapping>
+
+	<caching-schemes>
+
+		<remote-cache-scheme>
+			<scheme-name>remote-default</scheme-name>
+			<service-name>remoteCacheService</service-name>
+			<initiator-config>
+				<tcp-initiator>
+					<remote-addresses>
+						<socket-address>
+							<address system-property="mycoherence.proxy.host">192.168.1.4</address>
+							<port system-property="mycoherence.proxy.port">8080</port>
+						</socket-address>
+					</remote-addresses>
+					<connect-timeout>10s</connect-timeout>
+				</tcp-initiator>
+
+			</initiator-config>
+
+		</remote-cache-scheme>
+
+	</caching-schemes>
